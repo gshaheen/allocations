@@ -1,15 +1,31 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}allocated.capital{% endblock %}
 
 {% block content %}
-
+<br>
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <div class="jumbotron">
+    <h1 class="display-4">welcome back, {{ user.username }}</h1>
+    <p class="lead">time for more analysis?</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="#" role="button">create new portfolio</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button">view portfolios</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">logout</a>
+  </div>  
+
+
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
+  <div class="jumbotron">
+    <h1 class="display-4">welcome!</h1>
+    <p class="lead">setup portfolios with different allocations to see their analysis</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">login</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">sign up</a>
+  </div>  
+
 {% endif %}
+
+
 
 {% endblock %}
