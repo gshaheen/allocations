@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Portfolio(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=False)
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     archived = models.BooleanField(default=False)
@@ -12,8 +12,8 @@ class Portfolio(models.Model):
         return self.title
 
 class Allocation(models.Model):
-    asset = models.CharField(max_length=100)
-    percentAllocation = models.PositiveIntegerField()
+    asset = models.CharField(max_length=100, blank=False)
+    percentAllocation = models.PositiveIntegerField(blank=False)
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
 
     def __str__(self):
