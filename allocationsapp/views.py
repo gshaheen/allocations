@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
+from .models import Portfolio
+from .forms import CreatePortfolioForm
 
 def home(request):
     return render(request, 'home.html') 
@@ -22,4 +24,19 @@ def signup(request):
 
 @login_required
 def createportfolio(request):
-    pass
+    if request.method == 'GET':
+        return render(request, 'createportfolio.html', {'form':CreatePortfolioForm()})
+    else:
+        try:
+            form = CreatePortfolioForm(request.POST)
+            newPortfolio = form.save(commit=False)
+            newPortfolio.user = request.user
+            newPortfolio.save()
+            return redirect('home')
+        except ValueError:
+            return render(request, 'createportfolio.html', {'form':CreatePortfolioForm(), 'error':'bad data passed. try again!'})
+
+@login_required
+def viewallportfolios(request):
+    portfolios = Portfolio.objects.filter(user=request.user)
+    return render(request, 'viewallportfolios.html', {'portfolios':portfolios})

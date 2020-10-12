@@ -9,8 +9,8 @@
     <h1 class="display-4">welcome back, {{ user.username }}</h1>
     <p class="lead">time for more analysis?</p>
     <hr class="my-4">
-    <a class="btn btn-primary btn-lg" href="#" role="button">create new portfolio</a>
-    <a class="btn btn-primary btn-lg" href="#" role="button">view portfolios</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'createportfolio' %}" role="button">create new portfolio</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'viewallportfolios' %}" role="button">view portfolios</a>
     <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">logout</a>
   </div>  
 
