@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<br>
 <h1>All Portfolios</h1>
+<br>
 
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">portfolio</th>
-        <th scope="col">description</th>
+        <th scope="col" class="text-primary">portfolio</th>
+        <th scope="col" class="text-primary">description</th>
+        <th scope="col" class="text-primary">allocations</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +18,15 @@
       <tr>
         <th scope="row">{{ portfolio.title }}</th>
         <td>{{ portfolio.description }}</td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 5%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">FB</div>
+            <div class="progress-bar bg-secondary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">AAPL</div>
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">AMZN</div>
+            <div class="progress-bar bg-secondary" role="progressbar" style="width: 35%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">NFLX</div>
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">GOOG</div>
+          </div>
+        </td>
       </tr>
     {% endfor %}
   </table>
