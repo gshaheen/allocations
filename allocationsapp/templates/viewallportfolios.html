@@ -8,15 +8,15 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col" class="text-primary">portfolio</th>
-        <th scope="col" class="text-primary">description</th>
-        <th scope="col" class="text-primary">allocations</th>
+        <th scope="col" class="text-dark">portfolio</th>
+        <th scope="col" class="text-dark">description</th>
+        <th scope="col" class="text-dark">allocations</th>
       </tr>
     </thead>
     <tbody>
     {% for portfolio in portfolios %}  
       <tr>
-        <th scope="row">{{ portfolio.title }}</th>
+        <th scope="row"><a href="#">{{ portfolio.title }}</a></th>
         <td>{{ portfolio.description }}</td>
         <td>
           <div class="progress">

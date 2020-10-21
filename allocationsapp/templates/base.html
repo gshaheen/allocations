@@ -21,13 +21,13 @@
 
         {% if user.is_authenticated %}
         
-        <span class="navbar-text text-primary">
+        <span class="navbar-text text-secondary">
           hi {{ user.username }}!
         </span>
-        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'createportfolio' %}">create new portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'viewallportfolios' %}">view portfolios</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">logout</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="{% url 'home' %}">home</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="{% url 'createportfolio' %}">create new portfolio</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="{% url 'viewallportfolios' %}">view portfolios</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="{% url 'logout' %}">logout</a></li>
 
         {% else %}
         <li class="nav-item">
