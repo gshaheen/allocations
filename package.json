@@ -1,0 +1,23 @@
+{
+  "name": "allocations",
+  "version": "2.0.0",
+  "description": "Construct, backtest, and share investment portfolios via URL parameters. No sign-in required.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "serve": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "allocations",
+    "backtest",
+    "investing",
+    "finance",
+    "stocks",
+    "bonds",
+    "etf",
+    "shareable"
+  ],
+  "author": "George Shaheen",
+  "license": "MIT"
+}
